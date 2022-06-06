@@ -1,0 +1,86 @@
+.sidebar {
+  .sidebar__listItemSelector {
+    display: none;
+    @include breakpoint(mobile) {
+      display: block;
+      background-color: $primary;
+      color: $white; 
+      padding: pxToEm(12px);
+      display: flex;
+      justify-content: space-between;
+      &:after {
+        content: '';
+        width: 16px;
+        height: 2px;
+        display: inline-block;
+        background-color: #fff;
+        transform: rotate(-135deg);
+        transform-origin: top;
+        position: absolute;
+        right: 6%;
+        top: 50%;
+        transition: transform 0.5s ease-in-out;
+      }
+      &:before {
+        content: '';
+        width: 16px;
+        height: 2px;
+        display: inline-block;
+        background-color: #fff;
+        transform: rotate(135deg);
+        position: absolute;
+        top: 47%;
+        right: 3%;
+        transition: transform 0.5s ease-in-out;
+      }
+      &.open:after {
+        transform: rotate(135deg);
+        transition: transform 0.5s ease-in-out;
+      }
+      &.open:before {
+        transform: rotate(45deg);
+        transition: transform 0.5s ease-in-out;
+      }
+    }
+  }
+  .sidebar__list {
+    padding-left: pxToEm(8px);
+    @include breakpoint(mobile) {
+      padding-left: 0;
+      position: absolute;
+      width: 100%;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      transform: translateY(-280px);
+      z-index: 1;
+    }
+    @include breakpoint(mobile) {
+      &.open {
+        animation-name: expand;
+        animation-duration: .5s;
+        transform: translateY(280px);
+        z-index: 1;
+      }
+      &.close {
+        animation-name: compress;
+        animation-duration: .5s;
+        transform: translateY(-280px);
+      }
+    }
+    .sidebar__listItem {
+      list-style: none;
+      border-bottom: 1px solid $grey;
+      color: $philippine-gray;
+      background-color: $bright-grey;
+      cursor: pointer;
+      span {
+        padding: pxToEm(14px);
+        display: block;
+        &.active {
+          border-bottom: 3px solid $philippine-gray;
+        }
+      }
+    }
+  }
+}

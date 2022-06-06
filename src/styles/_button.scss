@@ -1,0 +1,14 @@
+.button {
+  width: auto;
+  border: none;
+  padding: pxToEm(10px);
+}
+.button--primary {
+  color: $white;
+  background-color: $primary;
+}
+
+.button--secondary {
+  color: $black;
+  background-color: $bright-grey;
+}

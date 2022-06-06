@@ -1,0 +1,8 @@
+.sign-up {
+  display: flex;
+  flex-direction: column;
+  width: pxToEm(380px);
+  .title {
+    margin: pxToEm(10px) 0;
+  }
+}

@@ -1,0 +1,13 @@
+.footer {
+  margin-top: auto;
+  width: 100%;
+  background: $bright-grey;
+  .footer__description {
+    text-align: center;
+    margin: 0;
+    padding: 1em;
+    @include breakpoint(mobile) {
+      font-size: $font-size-small;
+    }
+  }
+}

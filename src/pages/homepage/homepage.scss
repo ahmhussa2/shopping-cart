@@ -1,0 +1,13 @@
+.homepage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: pxToEm(20px) pxToEm(80px);
+
+    @include breakpoint(tablet) {
+        padding: pxToEm(16px);
+    }
+    @include breakpoint(mobile) {
+        padding: pxToEm(4px)
+    }
+}

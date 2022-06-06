@@ -1,0 +1,59 @@
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end; 
+  @include box-shodow;
+  .header__logoContainer {
+    img {
+      padding: pxToEm(8px);
+
+      @include breakpoint(tablet) {
+        transform: scale(.85)
+      }
+      @include breakpoint(mobile) {
+        transform: scale(1)
+      }
+    }
+  }
+  .header__options {
+    flex-grow: 1;
+    align-self: center;
+    margin: 0 pxToEm(54px);
+    @include breakpoint(mobile) {
+      margin: 0;
+    }
+    .header__optionsLink{
+      margin: 0 pxToEm(16px);
+      color: $DimGray;
+      font-size: $font-size;
+      @include breakpoint(mobile) {
+        font-size: $font-size-xsmall;
+      }
+    }
+  }
+  .header__cartWrapper {
+    display: flex;
+    flex-direction: column;
+    @include breakpoint(mobile) {
+      align-items: center;
+    }
+    .options {
+      margin-bottom: pxToEm(16px);
+      @include breakpoint(mobile) {
+        margin-bottom: pxToEm(6px);
+      }
+      .option {
+        color: $DimGray;
+        @include breakpoint(mobile) {
+          font-size: $font-size-xsmall;
+        }
+        &:last-child {
+          margin-left: pxToEm(12px);
+          
+        }
+      }
+    }
+  }
+
+}

@@ -1,0 +1,84 @@
+.productlist {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  .productCard {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    padding: pxToEm(8px);
+    @include breakpoint(tablet) {
+      width: 50%;
+    }
+    @include breakpoint(mobile) {
+      width: 100%;
+    }
+    .productCard__heading {
+      font-family: $roboto-bold;
+      font-size: $font-size-heading;
+      margin-bottom: pxToEm(8px);
+      min-height: 100px;
+      max-height: 100px;
+    }
+    .productCard__dummyWrapper {
+      .productCard__imageWrapper {
+        .productCard__image {
+          width: 100%;
+          max-height: 240px;
+          margin-bottom: pxToEm(8px);
+        }
+      }
+      .productCard__textWrapper {
+        .productCard__description {
+          font-family: $roboto-regular;
+          font-size: $font-size-small;
+          margin-bottom: pxToEm(10px);
+          padding: pxToEm(12px);
+          background-color: $antiflash-white;
+          min-height: 195px;
+          letter-spacing: -0.25px;
+          @include breakpoint(mobile) {
+            min-height: auto;
+          }
+        }
+        .productCard__priceWrapper {
+          display: flex;
+          margin-top: auto;
+          justify-content: space-between;
+          margin-top: pxToEm(10px);
+          .productCard__price {
+            letter-spacing: -1px;
+            @include breakpoint(tablet) {
+              display: none;
+            }
+          }
+          .productCard__button {
+            width: auto;
+            border: none;
+            padding: pxToEm(8px) pxToEm(26px);
+            &.productCard__button--buynow {
+              background-color: $primary;
+              color: $white;
+              @include breakpoint(tablet) {
+                width: 100%;
+              }
+              .productCard__buynow--tablet {
+                display: none;
+                @include breakpoint(tablet) {
+                  display: inline-block;
+                }
+              }
+            }
+            &.productCard__button--addedToCart {
+              color: $white;
+              background-color: $primary;
+              padding: pxToEm(8px);
+              pointer-events: none;
+            }
+          }
+          
+        }
+      }
+    }
+  }
+}

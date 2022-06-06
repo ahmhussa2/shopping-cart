@@ -1,0 +1,28 @@
+.productsWrapper {
+  display: flex;
+  @include breakpoint(mobile) {
+    display: block;
+    overflow: hidden;
+  }
+  .productsWrapper__sidebar {
+    background-color: $bright-grey;
+    width: 20%;
+    @include breakpoint(tablet) {
+      width: 25%;
+    }
+    @include breakpoint(mobile) {
+      width: 100%;
+      position: relative;
+    }
+  }
+  .productsWrapper__main {
+    width: 80%;
+    padding: pxToEm(8px);
+    @include breakpoint(tablet) {
+      width: 75%;
+    }
+    @include breakpoint(mobile) {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,66 @@
+.carousel {
+  .carousel-control-next {
+    width: unset;
+    .carousel-control-next-icon {
+      background-image: none;
+      background-color: #000;
+      width: pxToEm(50px);
+      height: auto;
+      @include breakpoint(mobile) {
+        width: pxToEm(34px);
+      }
+      &:after {
+        content: 'NEXT';
+        line-height: 2;
+        @include breakpoint(mobile) {
+          font-size: $font-size-xsmall;
+        }
+      }
+    }
+  }
+  .carousel-control-prev {
+    width: unset;
+    .carousel-control-prev-icon {
+      background-image: none;
+      background-color: #000;
+      width: pxToEm(50px);
+      height: auto;
+      @include breakpoint(mobile) {
+        width: pxToEm(34px);
+      }
+      &:after {
+        content: 'PREV';
+        line-height: 2;
+        @include breakpoint(mobile) {
+          font-size: $font-size-xsmall;
+        }
+      }
+    }
+  }
+  .carousel-indicators {
+    @include breakpoint(mobile) {
+      bottom: -50%;
+    }
+    button {
+      background-color: #000;
+      height: pxToEm(5px);
+      width: pxToEm(5px);
+      margin-left: pxToEm(12px);
+      margin-right: pxToEm(12px);
+      border-radius: 50%;
+    }
+  }
+}
+
+.carousel-inner .item {
+  min-height: pxToEm(400px);
+}
+
+.carousel, .carousel-inner, .carousel-item, .carousel-item, .carousel-item img {
+  width: 100%;
+}
+
+
+.carousel-item img {
+  max-height: pxToEm(300px);
+}

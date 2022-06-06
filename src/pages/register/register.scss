@@ -1,0 +1,43 @@
+.register {
+  display: flex;
+  padding: pxToEm(16px);
+  @include breakpoint(mobile) {
+    display: block;
+  }
+  .register__description {
+    width: 50%;
+    padding: pxToEm(80px);
+    @include breakpoint(tablet) {
+      width: 50%;
+      padding: pxToEm(16px);  
+      margin-top: pxToEm(48px);
+    }
+    @include breakpoint(mobile) {
+      margin-top: 0;
+      width: 100%;
+      padding: 0;
+    }
+    .register__heading {
+      font-family:  $roboto-bold;
+      font-size: $font-size-large-heading;
+      margin-bottom: pxToEm(16px);
+    }
+    .register__descriptionMessage {
+      font-family:  $roboto-regular;
+      font-size: $font-size;
+    }
+  }
+  .register__form {
+    width: 40%;
+    @include breakpoint(tablet) {
+      width: 50%;
+    }
+    @include breakpoint(mobile) {
+      width: 100%;
+    }
+
+    button {
+      width: 100%;
+    }
+  }
+}
